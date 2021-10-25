@@ -49,10 +49,19 @@ Prerequisites
 		- This will start a shell session that can be used to create your certificates
 		- follow the non-windows procedure for the rest of the commands
 	- Non-windows Procedure
-		- run: 
+		* Initialize easy-rsa
+
+			```
 			./easyrsa init-pki
+			```
+		* Buid the certificate authority.  When running this command you will be asked for the "Common Name", you can use the hostname from the prerequisites section.
+			```
 			./easyrsa build-ca nopass
+			```
+		* Generate the server certificate
+			```
 			./easyrsa build-server-full <hostname from prerequisites section> nopass
+			```
 
 5. Import your certificates into the Certificate Manager created in step 1
 	- login to cloud.ibm.com
